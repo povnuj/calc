@@ -1,0 +1,125 @@
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	font: 12px/18px Arial, sans-serif;
+	background: rgb(12, 183, 250);
+
+}
+.wrapper {
+	width: 100%;
+	min-width: 1000px;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+.calc{
+ margin-top: 5%;
+ max-width: 300px;
+ max-height: 500px;
+ background-color: rgb(214, 212, 212);
+ min-width: 230px;
+ min-height: 260px;
+
+}
+.displ{
+	background-color: white;
+}
+
+.TopEnterLine{
+	margin-top: 13%;
+	border-style: none;
+	width: 98%;
+	font-size: 20px;
+	text-align: right;
+	height: 5%;
+}
+.TopEnterLine :active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+.EnterLine{
+	width: 98%;
+	border-style: none;
+	font-size: 50px;
+	text-align: right;
+	height: 13%;
+}
+.CentrFlex{
+	
+	display: flex;
+	justify-content: center;
+}
+.BtnPos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	height: 15.8%;
+	
+}
+.sups{
+	vertical-align: super;
+	font-size: small;
+}
+.Btn{
+	width: 25%;
+	text-align: center;
+	padding: 1.2em 0;
+	font-weight: bold;
+	font-size: 20px;
+}
+.btnSiz{
+	width: 100%;
+	height: 79%;
+
+}
+.Btn:hover{
+	background-color: blanchedalmond;
+}
