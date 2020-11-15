@@ -29,64 +29,67 @@ let temp =[];
         //console.log(Math.sign(ResultStr.value));
 
     }
+    function CalcNow(val){
+        switch(val){
+                
+            case "%":
+                ResultStr.value = Math.pow(2,+ResultStr.value);
+                break;
+            case "SQ":
+                ResultStr.value = Math.sqrt(ResultStr.value);
+                break;
+            case "CE": 
+            case "C":  
+            case "Escape":
+                ClearDisp();
+                break;
+            case "PM":
+                PlMin();
+                break;
+            case "=":
+            case "Enter":
+                StrTop.value += ResultStr.value;
+                ResultStr.value = '';
+                EndCalc = 1;
+                StrTop.value += "="+Math.trunc(math.evaluate(StrTop.value)); 
+                break;
+            case "BS":
+            case "Backspace": 
+                temp.pop();
+                ResultStr.value = temp.join('');
+                break;
+            case "+":
+                MatOper("+");    
+                break;
+            case "-":
+                MatOper("-");
+                break;  
+            case "*":
+                MatOper("*");
+                break; 
+            case "/":
+                MatOper("/");
+                break;
+            default:
+            ResultStr.value += val;
+            temp = ResultStr.value.split('');
+            if(EndCalc != '') {
+                 StrTop.value = '';
+                 EndCalc = 0;
+            }
+        }
+
+    }
+
+    document.addEventListener('keydown', event => {
+        if ((event.key).match(/[0-9%\/*\-+\(\)=]|Backspace|Escape|Enter/)) CalcNow(event.key)
+            console.log(event.key)
+    })
 
     Array.from(ClickByid).forEach(el => {
         el.addEventListener('click', function (event) {
            
-            
-            
-            switch(event.target.id){
-                
-                case "%":
-                    ResultStr.value = Math.pow(2,+ResultStr.value);
-                    break;
-                case "SQ":
-                    ResultStr.value = Math.sqrt(ResultStr.value);
-                    break;
-                case "CE": 
-                    ClearDisp();
-                    break;
-                case "C":  
-                    ClearDisp();
-                    break;
-                case "PM":
-                    PlMin();
-                    break;
-                case "=":
-                    StrTop.value += ResultStr.value;
-                    ResultStr.value = '';
-                    EndCalc = 1;
-                    StrTop.value += "="+Math.trunc(math.evaluate(StrTop.value)); 
-                    break;
-                case "BS": 
-                    temp.pop();
-                    ResultStr.value = temp.join('');
-                    break;
-                case "+":
-                    MatOper("+");    
-                    break;
-                case "-":
-                    MatOper("-");
-                    break;  
-                case "*":
-                    MatOper("*");
-                    break; 
-                case "/":
-                    MatOper("/");
-                    break;
-                default:
-                ResultStr.value += event.target.id;
-                temp = ResultStr.value.split('');
-                if(EndCalc != '') {
-                     StrTop.value = '';
-                     EndCalc = 0;
-                }
-            }
-            
-                
-           
-
-            
+            CalcNow(event.target.id);
              //console.log(Object.keys(ResultStr.value))
         })
     })
